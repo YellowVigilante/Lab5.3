@@ -4,16 +4,13 @@
 #include "stdafx.h"
 #include <math.h>
 /* *****************************************************************
-Square is limited by 4 following lines:
+Area is limited by 4 lines as following:
 1. y = a * x + b = x + 7 (a=1; b=7)
 2. y = -x + 7 (a=-1; b=7)
 3. y = x - 7 (a=1; b=-7)
 4. y = -x -7 (a=-1; b=-7)
-
-Основное усло
 ***************************************************************** */
-int main()
-{   
+int main() {   
 	char c;
 	short 
 		belongs = 0;
