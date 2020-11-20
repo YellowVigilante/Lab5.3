@@ -27,32 +27,29 @@ int main() {
 	printf("y=");
 	scanf_s("%f", &y);
 	printf("\n");
-	//check borders
-	if ((x >= -7) && (x <= 7) && (y >= -7) && (y <= 7)) {
-		//determining quadrant:
-		if (x >= 0 && y >= 0) {
-			a_bord = -1;
-			b_bord = 7;
-		}
-		else if (x>=0 && y<0) {
-			a_bord = 1;
-			b_bord = -7;
-		}
-		else if (x < 0 && y < 0) {
-			a_bord = -1;
-			b_bord = -7;
-		}
-		else {
-			a_bord = 1;
-			b_bord = 7;
-		}
-		a = a_bord;
-		b = y - a*x;
-		if (fabs(b) < fabs(b_bord)) {
-			belongs = 1;
-		}
+	//determining quadrant:
+	if (x >= 0 && y >= 0) {
+		a_bord = -1.0;
+		b_bord = 7.0;
 	}
-
+	else if (x>=0 && y<0) {
+		a_bord = 1.0;
+		b_bord = -7.0;
+	}
+	else if (x < 0 && y < 0) {
+		a_bord = -1.0;
+		b_bord = -7.0;
+	}
+	else {
+		a_bord = 1.0;
+		b_bord = 7.0;
+	}
+	a = a_bord;
+	b = y - a*x;
+	if (fabs(b) <= fabs(b_bord)) {
+		belongs = 1;
+	}
+	
 	//printf("Dot %s belongs the defined area", belongs ? "" : "doesn't");
 	if (belongs)
 		printf("Dot belongs the defined area");
